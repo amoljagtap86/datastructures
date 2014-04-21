@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/TreeTraversals/TreeTraversals/obj/Debug
+/TreeTraversals/TreeTraversals.sln.DotSettings.user
+*.suo
