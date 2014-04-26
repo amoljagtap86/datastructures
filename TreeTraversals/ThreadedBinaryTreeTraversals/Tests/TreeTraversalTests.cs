@@ -55,5 +55,41 @@ namespace ThreadedBinaryTreeTraversals.Tests
 
             Assert.AreEqual("BAC", tree.GetInOrderTraversal());
         }
+
+        [TestMethod]
+        public void CanTraverseTreeWithLeftSubTree()
+        {
+            var tree = new Tree();
+
+            var headerNode = new Node();
+            headerNode.Right = headerNode;
+            const string nodeValue = "A";
+
+
+            var levelOneNode = new Node();
+            var levelTwoNode = new Node();
+
+            var rootNode = new Node
+            {
+                Left = levelOneNode,
+                Right = headerNode,
+                Value = nodeValue,
+                HasLeftChild = true,
+            };
+
+            levelOneNode.Left = levelTwoNode;
+            levelOneNode.Right = rootNode;
+            levelOneNode.Value = "B";
+            levelOneNode.HasLeftChild = true;
+
+            levelTwoNode.Left = headerNode;
+            levelTwoNode.Right = levelOneNode;
+            levelTwoNode.Value = "C";
+
+            headerNode.Left = rootNode;
+            tree.HeaderNode = headerNode;
+
+            Assert.AreEqual("CBA", tree.GetInOrderTraversal());
+        }
     }
 }
