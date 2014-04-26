@@ -4,7 +4,7 @@ using ThreadedBinaryTreeTraversals.ThreadedBinaryTree;
 namespace ThreadedBinaryTreeTraversals.Tests
 {
     [TestClass]
-    public class TreeTraversalTests
+    public class InOrderTreeTraversalTests
     {
         [TestMethod]
         public void ShouldTraverseSingleNode()
@@ -16,6 +16,7 @@ namespace ThreadedBinaryTreeTraversals.Tests
             var rootNode = new Node { Left = headerNode, Right = headerNode, Value = nodeValue };
             headerNode.Left = rootNode;
             tree.HeaderNode = headerNode;
+
             var inOrderTraversal = tree.GetInOrderTraversal();
             Assert.AreEqual(nodeValue, inOrderTraversal);
         }

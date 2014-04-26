@@ -41,7 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\TreeTraversalTests.cs" />
+    <Compile Include="Tests\InOrderTreeTraversalTests.cs" />
+    <Compile Include="Tests\PreOrderTreeTraversalTests.cs" />
     <Compile Include="ThreadedBinaryTree\Node.cs" />
     <Compile Include="ThreadedBinaryTree\Tree.cs" />
   </ItemGroup>
