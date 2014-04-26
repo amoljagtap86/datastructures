@@ -91,5 +91,42 @@ namespace ThreadedBinaryTreeTraversals.Tests
 
             Assert.AreEqual("CBA", tree.GetInOrderTraversal());
         }
+
+
+        [TestMethod]
+        public void CanTraverseTreeWithRightSubTree()
+        {
+            var tree = new Tree();
+
+            var headerNode = new Node();
+            headerNode.Right = headerNode;
+            const string nodeValue = "A";
+
+
+            var levelOneNode = new Node();
+            var levelTwoNode = new Node();
+
+            var rootNode = new Node
+            {
+                Left = headerNode,
+                Right = levelOneNode,
+                Value = nodeValue,
+                HasRightChild = true,
+            };
+
+            levelOneNode.Right = levelTwoNode;
+            levelOneNode.Left = rootNode;
+            levelOneNode.Value = "B";
+            levelOneNode.HasRightChild = true;
+
+            levelTwoNode.Right = headerNode;
+            levelTwoNode.Left = levelOneNode;
+            levelTwoNode.Value = "C";
+
+            headerNode.Left = rootNode;
+            tree.HeaderNode = headerNode;
+
+            Assert.AreEqual("ABC", tree.GetInOrderTraversal());
+        }
     }
 }
