@@ -1,4 +1,4 @@
-﻿namespace TreeTraversals
+﻿namespace TreeTraversals.Tree
 {
     public class Node
     {

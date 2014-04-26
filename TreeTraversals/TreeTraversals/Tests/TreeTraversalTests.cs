@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TreeTraversals.Tree;
 
 namespace TreeTraversals.Tests
 {
@@ -8,7 +9,7 @@ namespace TreeTraversals.Tests
         [TestMethod]
         public void CanTraverseSingleNode()
         {
-            var singleNodeTree = new Tree();
+            var singleNodeTree = new Tree.Tree();
             var rootNode = new Node { Value = "A" };
 
             singleNodeTree.Root = rootNode;
@@ -21,7 +22,7 @@ namespace TreeTraversals.Tests
         [TestMethod]
         public void CanTraverseTreeWithHeightOne()
         {
-            var singleNodeTree = new Tree();
+            var singleNodeTree = new Tree.Tree();
             var rootNode = new Node { Value = "A" };
             var leftNode = new Node { Value = "B" };
             var rightNode = new Node { Value = "C" };
@@ -38,7 +39,7 @@ namespace TreeTraversals.Tests
         [TestMethod]
         public void CanTraverseTreeWithOnlyLeftSubtree()
         {
-            var singleNodeTree = new Tree();
+            var singleNodeTree = new Tree.Tree();
             var rootNode = new Node { Value = "P" };
             var levelOneNode = new Node { Value = "Q" };
             var levelTwoNode = new Node { Value = "R" };
@@ -54,7 +55,7 @@ namespace TreeTraversals.Tests
         [TestMethod]
         public void CanTraverseTreeWithOnlyRightSubtree()
         {
-            var singleNodeTree = new Tree();
+            var singleNodeTree = new Tree.Tree();
             var rootNode = new Node { Value = "P" };
             var levelOneNode = new Node { Value = "Q" };
             var levelTwoNode = new Node { Value = "R" };
