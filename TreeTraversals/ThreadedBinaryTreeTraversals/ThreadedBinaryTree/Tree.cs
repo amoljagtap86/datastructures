@@ -6,8 +6,24 @@
 
         public string GetInOrderTraversal()
         {
-            var root = HeaderNode.Left;
-            return root.Value;
+            var node = HeaderNode.Left;
+            string inOrder = string.Empty;
+
+            while (node != HeaderNode)
+            {
+                if (node.IsVisited == false)
+                {
+                    node.IsVisited = true;
+                    if (node.HasLeftChild)
+                    {
+                        node = node.Left;
+                        continue;
+                    }
+                }
+                inOrder += node.Value;
+                node = node.Right;
+            }
+            return inOrder;
         }
     }
 }

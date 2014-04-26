@@ -7,5 +7,6 @@
         public string Value { get; set; }
         public bool HasLeftChild { get; set; }
         public bool HasRightChild { get; set; }
+        public bool IsVisited { get; set; }
     }
 }
